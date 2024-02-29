@@ -71,26 +71,23 @@ int main(int argc, char const *argv[])
               << "%\n\n";
 
     // Obtendo numero de falhas de pagina considerando os seguintes frames livres (4, 8, 16, 32).
-    // std::cout << "LRU (Last Recently Used)\n";
-    // for (int framesSize = 4; framesSize <= 32; framesSize *= 2)
-    // {
-    //     int pageFautls = LRU(referenceString, framesSize);
-    //     std::cout << "Tamanho Frames Livres: " << framesSize
-    //               << " | Numero de Falhas de Pagina: " << pageFautls << "\n";
-    // }
+    std::cout << "LRU (Last Recently Used)\n";
+    for (int framesSize = 4; framesSize <= 32; framesSize *= 2)
+    {
+        int pageFautls = LRU(referenceString, framesSize);
+        std::cout << "Tamanho Frames Livres: " << framesSize
+                  << " | Numero de Falhas de Pagina: " << pageFautls << "\n";
+    }
 
-    //std::cout << std::endl;
+    std::cout << std::endl;
 
     std::cout << "OPT (Optimal Page Replacement)\n";
-    // for (int framesSize = 4; framesSize <= 32; framesSize *= 2)
-    // {
-    //     int pageFaults = OPT(referenceString, 4);
-    //     std::cout << "Frame Size: " << framesSize
-    //               << " | Number of Page Faults: " << pageFaults << "\n";
-    // }
-    int pageFaults = OPT(referenceString, 4);
-    std::cout << "Frame Size: " << 4
-              << " | Number of Page Faults: " << pageFaults << "\n";
+    for (int framesSize = 4; framesSize <= 32; framesSize *= 2)
+    {
+        int pageFaults = OPT(referenceString, 4);
+        std::cout << "Frame Size: " << framesSize
+                  << " | Number of Page Faults: " << pageFaults << "\n";
+    }
 
     trace.close();
     return 0;
